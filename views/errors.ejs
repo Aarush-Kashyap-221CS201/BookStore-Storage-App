@@ -1,0 +1,8 @@
+<!-- views/partials/errors.ejs -->
+<% if (errors) {%>
+    <ul>
+      <% errors.forEach(function(error) { %>
+        <li class="error_item"><%= error.msg %></li>
+      <% }); %>
+    </ul>
+  <% } %>

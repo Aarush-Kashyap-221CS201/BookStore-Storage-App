@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/genre.css" />
+    <link rel="icon" type="image/x-icon" href="/favicon.png" />
+    <title>Genres</title>
+</head>
+<body>
+    <a href="/"><img src="/back.png" id="go_back_icon"/></a>
+    <div id="heading_box">
+        List of Genres
+    </div>
+    <div id="add_btn_box">
+        <a href="/genres/add"><button id="add_genre_btn">+ Add Genre</button></a>
+    </div>
+    <% if (genres){ %>
+        <div id="genres_box">
+            <% genres.forEach(genre=>{ %>
+                <div class="genre">
+                    <h1><%= genre.name %></h1>
+                    <a href="/books/?genre=<%= genre.id %>&price_sort="><button>See Books</button></a>
+                    <a href="/genres/?delete=true&id=<%= genre.id %>"><button id="delete_btn">Delete Genre</button></a>
+                </div>
+            <% }) %>
+        </div>
+    <% } %>
+    <% if (deleteClick){ %>
+        <div id="delete_container">
+            <div id="delete_box">
+                <h1 id="form_heading">Enter Admin Password</h1>
+                <form action="/genres/delete/<%= deletedGenre %>" method="POST">
+                        <input type="password" placeholder="Enter the password" name="password"/>
+                        <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    <% } %>
+</body>
+</html>

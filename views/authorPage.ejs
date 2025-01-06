@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/authorPage.css" />
+    <link rel="icon" type="image/x-icon" href="/favicon.png" />
+    <title>Author Details</title>
+</head>
+<body>
+    <a href="/authors"><img src="/back.png" id="go_back_icon"/></a>
+    <div id="heading_box">
+        Author Details
+    </div>
+    <div id="content_box">
+        <h1><%= author.name %></h1>
+        <p><%= author.bio %></p>
+        <div id="books_box">
+            <h3>List of Books</h3>
+            <% if (books.length > 0){ %>
+                <% books.forEach((book,index)=>{ %>
+                    <a href="/books/<%= book.id %>"><p><%= index+1 %>. <%= book.title %></p></a>
+                <% }) %>
+            <% }else{ %>
+                No Books Written
+            <% } %>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,98 @@
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+
+#go_back_icon{
+    width:calc(2.5vw);
+    height:auto;
+    position: absolute;
+    top:3%;
+    left:2%;
+    transition: all 0.2s ease-in-out;
+    z-index: 1001;
+}
+
+#go_back_icon:hover{
+    cursor: pointer;
+    transform: scale(0.8);
+}
+
+#heading_box{
+    width:100%;
+    height:10vh;
+    box-shadow: 0 5px 5px rgb(0,0,0,0.5);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: calc(2.5vw);
+    font-weight: 1000;
+}
+
+#form_box {
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:5vh;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Labels take 1 part, inputs take 2 parts */
+    gap: calc(2vh) calc(2vw); /* Vertical and horizontal spacing */
+    width: 50%; /* Adjust the form width */
+    height: fit-content;
+    padding: calc(2vw);
+    background-color: #f9f9f9; /* Optional background color for the form */
+    border-radius: calc(1vw);
+    box-shadow: 0 0 calc(1vw) rgba(0, 0, 0, 0.5); /* Optional shadow for the form */
+}
+
+.input_box {
+    display: contents; /* Makes the parent container align its children within the grid */
+}
+
+label {
+    font-weight: 1000;
+    font-size: calc(1.5vw);
+    text-align: right; /* Align the label text to the right */
+    padding-right: calc(1vw);
+}
+
+input {
+    text-align: center; /* Align text to the left inside the input */
+    border-radius: calc(0.2vw);
+    width: 100%; /* Inputs take full width of their grid column */
+    padding: calc(0.5vw); /* Add padding inside the input box */
+    border: 1px solid #ccc; /* Optional border styling */
+    font-size: calc(1vw);
+}
+
+button {
+    grid-column: span 2; /* Button spans across both label and input columns */
+    justify-self: center; /* Centers the button horizontally */
+    padding: calc(1vh) calc(2vw);
+    font-size: calc(1.2vw);
+    background-color: #007bff; /* Button color */
+    color: white;
+    border: none;
+    border-radius: calc(0.3vw);
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+option{
+    text-align: center;
+}
+
+.error_item{
+    color:red;
+}

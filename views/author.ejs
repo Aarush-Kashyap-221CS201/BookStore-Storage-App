@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/author.css" />
+    <link rel="icon" type="image/x-icon" href="/favicon.png" />
+    <title>Authors</title>
+</head>
+<body>
+    <a href="/"><img src="/back.png" id="go_back_icon"/></a>
+    <div id="heading_box">
+        List of Authors
+    </div>
+    <div id="add_btn_box">
+        <a href="/authors/add"><button id="add_author_btn">+ Add Author</button></a>
+    </div>
+    <% if (authors){ %>
+        <div id="authors_box">
+            <% authors.forEach(author=>{ %>
+                <div class="author">
+                    <h1><%= author.name %></h1>
+                    <p>Number of Books: <%= author.count %></p>
+                    <a href="/authors/<%= author.id %>"><button>See More</button></a>
+                    <a href="/authors/?delete=true&id=<%= author.id %>"><button id="delete_btn">Delete Author</button></a>
+                </div>
+            <% }) %>
+        </div>
+    <% } %>
+    <% if (deleteClick){ %>
+        <div id="delete_container">
+            <div id="delete_box">
+                <h1 id="form_heading">Enter Admin Password</h1>
+                <form action="/authors/delete/<%= deletedAuthor %>" method="POST">
+                        <input type="password" placeholder="Enter the password" name="password"/>
+                        <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    <% } %>
+</body>
+</html>

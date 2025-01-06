@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/book.css" />
+    <link rel="icon" type="image/x-icon" href="/favicon.png" />
+    <title>Books</title>
+</head>
+<body>
+    <a href="/"><img src="/back.png" id="go_back_icon"/></a>
+    <div id="heading_box">
+        List of Books
+    </div>
+    <div id="add_btn_box">
+        <a href="/books/?filter=true"><button id="filter_btn">Filter <img src="/filter.png" /></button></a>
+        <a href="/books/add"><button id="add_book_btn">+ Add Book</button></a>
+    </div>
+    <div id="filter_box">
+        <p><b>Showing Authors:</b> <% if (authorFilter) { authorFilter.forEach(author=>{ %> <%= author.name %>, <% }) %> <% }else{ %> All <% } %></p>
+        <p><b>Showing Genres:</b> <% if (genreFilter) { genreFilter.forEach(genre=>{ %> <%= genre.name %>, <% }) %> <% }else{ %> All <% } %></p>
+        <p><b>Price Filter:</b> <% if (!priceFilter){ %> None <% }else if(priceFilter=='asc'){ %> Ascending <% } else { %> Descending <% } %></p>
+    </div>
+    <div id="books_box">
+        <% books.forEach(book=>{ %>
+            <div class="book">
+                <img src="<%= book.image_url %>" />
+                <h3 id="book_heading"><%= book.title %></h3>
+                <p id="book_author">By: <%= book.author_name %></p>
+                <p id="book_price">$ <%= book.price %></p>
+                <a href="/books/<%= book.id %>"><button>See More</button></a>
+            </div>
+        <% }) %>
+    </div>
+    <% if (filter){ %>
+        <div id="form_container">
+            <div id="form_box">
+                <form method="GET" action="/books">
+                    <div class="form_section">
+                        <h3>Filter by Author</h3>
+                        <% authors.forEach(author => { %>
+                            <label>
+                                <input type="checkbox" name="author" value="<%= author.id %>">
+                                <%= author.name %>
+                            </label>
+                        <% }) %>
+                    </div>
+                    <div class="form_section">
+                        <h3>Filter by Genre</h3>
+                        <% genres.forEach(genre => { %>
+                            <label>
+                                <input type="checkbox" name="genre" value="<%= genre.id %>">
+                                <%= genre.name %>
+                            </label>
+                        <% }) %>
+                    </div>
+                    <div class="form_section">
+                        <h3>Sort by Price</h3>
+                        <select name="price_sort">
+                            <option value="">None</option>
+                            <option value="asc">Low to High</option>
+                            <option value="desc">High to Low</option>
+                        </select>
+                    </div>
+                    <button type="submit">Apply Filters</button>
+                </form>        
+            </div>
+        </div>
+    <% } %>
+</body>
+</html>

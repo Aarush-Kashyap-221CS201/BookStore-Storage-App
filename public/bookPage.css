@@ -1,0 +1,187 @@
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+#container{
+    width:100vw;
+    height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#go_back_icon{
+    width:calc(2.5vw);
+    height:auto;
+    position: absolute;
+    top:3%;
+    left:2%;
+    transition: all 0.2s ease-in-out;
+    z-index: 1001;
+}
+
+#go_back_icon:hover{
+    cursor: pointer;
+    transform: scale(0.8);
+}
+
+#heading_box{
+    top:0;
+    position: absolute;
+    height:10vh;
+    width:100%;
+    z-index: 1000;
+    box-shadow: 0 5px 5px rgb(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: calc(2.5vw);
+    font-weight: 1000;
+}
+
+#book_box{
+    width: 80%;
+    height: 80%;
+    display: flex;
+}
+
+#image_box{
+    width:40%;
+    height:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#image_box img{
+    width:80%;
+    height:80%;
+}
+
+#content_box{
+    width:60%;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    gap:5vh;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#book_title{
+    font-size: calc(2.5vw);
+    font-weight: 1000;
+    font-family: cursive;
+}
+
+#book_author{
+    font-size: calc(1.5vw);
+    font-weight: 750;
+}
+
+#book_price{
+    font-size: calc(1.5vw);
+    font-weight: 750;
+}
+
+#book_desc{
+    font-size: calc(1.2vw);
+    width:50%;
+}
+
+#book_genres{
+    font-size: calc(1.2vw);
+    width:50%;
+}
+
+#add_genre_btn{
+    padding:calc(0.25vw);
+    cursor: pointer;
+    border-radius: calc(0.25vw);
+    font-weight: 750;
+    transition: all 0.2s ease-in-out;
+}
+
+#add_genre_btn:hover{
+    transform: scale(0.8);
+}
+
+#genre_container{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100vw;
+    height:100vh;
+    background-color: rgb(255, 255, 255,0.85);
+    z-index: 2000;
+}
+
+#genre_box{
+    width: fit-content;
+    height: fit-content;
+    padding:calc(2vw);
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 2001;
+    background-color: white;
+    box-shadow: 5px 5px 5px rgb(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    gap:calc(4vh);
+    justify-content: center;
+    align-items: center;
+}
+
+#genre_box form{
+    display: flex;
+    flex-direction: column;
+    gap:calc(4vh);
+    justify-content: center;
+    align-items: center;
+}
+
+#genre_box #form_heading{
+    font-size: calc(2vw);
+    font-weight: 1000;
+}
+
+#genre_box label{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+}
+
+#genre_box button{
+    font-weight: 1000;
+    font-size: calc(1.2vw);
+    border-radius: calc(0.5vw);
+    cursor: pointer;
+    padding: calc(0.5vw);
+    transition: all 0.2s ease-in-out;
+    background-color: lightgreen;
+}
+
+#genre_box button:hover{
+    transform: scale(0.9);
+}
+
+#delete_btn{
+    padding:calc(0.5vw) calc(1vw);
+    border-radius: calc(0.5vw);
+    font-size: calc(1vw);
+    cursor: pointer;
+    border: 1px solid red;
+    transition: all 0.2s ease-in-out;
+}
+
+#delete_btn:hover{
+    background-color: red;
+    transform: scale(0.9);
+}

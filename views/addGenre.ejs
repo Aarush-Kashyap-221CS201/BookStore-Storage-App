@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/addGenre.css" />
+    <link rel="icon" type="image/x-icon" href="/favicon.png" />
+    <title>Add Genre</title>
+</head>
+<body>
+    <a href="/genres"><img src="/back.png" id="go_back_icon"/></a>
+    <div id="heading_box">
+        Enter Genre Details
+    </div>
+    <div id="form_box">
+        <form action="/genres/add" method="POST">
+            <div class="input_box">
+                <label for="name">Name of Genre</label>
+                <input name="name" type="text" required />
+            </div>
+            <% if ((books)&&(books.length>0)){ %>
+                <% books.forEach(book=>{ %>
+                    <div class="input_box">
+                        <input type="checkbox" name="<%= book.id %>"/>
+                        <label for="book"><%= book.title %></label>
+                    </div>
+                <% }) %>
+            <% } %>
+            <button type="submit">Submit</button>
+        </form>
+        <%- include("errors.ejs",errors=errors) %>
+    </div>
+</body>
+</html>

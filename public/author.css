@@ -1,0 +1,174 @@
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+
+#go_back_icon{
+    width:calc(2.5vw);
+    height:auto;
+    position: absolute;
+    top:3%;
+    left:2%;
+    transition: all 0.2s ease-in-out;
+    z-index: 1001;
+}
+
+#go_back_icon:hover{
+    cursor: pointer;
+    transform: scale(0.8);
+}
+
+#heading_box{
+    width:100%;
+    height:10vh;
+    box-shadow: 0 5px 5px rgb(0,0,0,0.5);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: calc(2.5vw);
+    font-weight: 1000;
+}
+
+#add_btn_box{
+    width:100%;
+    height:fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:calc(2vw);
+    gap:calc(5vw);
+}
+
+#add_btn_box button{
+    width:fit-content;
+    height: fit-content;
+    padding:calc(0.5vw) calc(1vw);
+    border-radius: calc(0.5vw);
+    font-size: calc(1.5vw);
+    font-weight: 1000;
+    font-family: cursive;
+    cursor: pointer;
+    background-color: lawngreen;
+    transition: all 0.2s ease-in-out;
+}
+
+#add_btn_box button:hover{
+    transform: scale(0.9);
+}
+
+#authors_box{
+    width:100%;
+    padding:calc(4vw);
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
+    justify-content: center;
+    align-items: center;
+    gap:calc(2vw);
+}
+
+.author{
+    padding:calc(2vw);
+    z-index: 1000;
+    box-shadow: 0 0 10px rgb(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:calc(1vw);
+}
+
+.author h1{
+    font-size: calc(1.35vw);
+    font-weight: 1000;
+}
+
+.author p{
+    font-size: calc(1.1vw);
+}
+
+.author button{
+    background-color: lightblue;
+    padding:calc(0.5vw) calc(1vw);
+    font-size: calc(1.2vw);
+    font-weight: 750;
+    border-radius: calc(0.5vw);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.author button:hover{
+    transform: scale(0.9);
+}
+
+#delete_btn{
+    border: 1px solid red;
+    background-color: white;
+}
+
+#delete_btn:hover{
+    background-color: red;
+}
+
+#delete_container{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100vw;
+    height:100vh;
+    background-color: rgb(255, 255, 255,0.85);
+    z-index: 2000;
+}
+
+#delete_box{
+    width: fit-content;
+    height: fit-content;
+    padding:calc(2vw);
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 2001;
+    background-color: white;
+    box-shadow: 5px 5px 5px rgb(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    gap:calc(4vh);
+    justify-content: center;
+    align-items: center;
+}
+
+#delete_box form{
+    display: flex;
+    flex-direction: column;
+    gap:calc(4vh);
+    justify-content: center;
+    align-items: center;
+}
+
+#delete_box #form_heading{
+    font-size: calc(2vw);
+    font-weight: 1000;
+}
+
+#delete_box label{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+}
+
+#delete_box button{
+    font-weight: 1000;
+    font-size: calc(1.2vw);
+    border-radius: calc(0.5vw);
+    cursor: pointer;
+    padding: calc(0.5vw);
+    transition: all 0.2s ease-in-out;
+    background-color: lightgreen;
+}
+
+#delete_box button:hover{
+    transform: scale(0.9);
+}

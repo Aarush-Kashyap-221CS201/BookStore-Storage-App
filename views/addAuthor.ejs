@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/addAuthor.css" />
+    <link rel="icon" type="image/x-icon" href="/favicon.png" />
+    <title>Add Author</title>
+</head>
+<body>
+    <a href="/authors"><img src="/back.png" id="go_back_icon"/></a>
+    <div id="heading_box">
+        Enter Author Details
+    </div>
+    <div id="form_box">
+        <form action="/authors/add" method="POST">
+            <div class="input_box">
+                <label for="name">Name of Author</label>
+                <input name="name" type="text" required />
+            </div>
+            <div class="input_box">
+                <label for="bio">Short Bio of Author</label>
+                <input name="bio" type="text" required />
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+        <%- include("errors.ejs",errors=errors) %>
+    </div>
+</body>
+</html>

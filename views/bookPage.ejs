@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/bookPage.css" />
+    <link rel="icon" type="image/x-icon" href="/favicon.png" />
+    <title>Book</title>
+</head>
+<body>
+    <div id="container">
+        <a href="/books"><img src="/back.png" id="go_back_icon"/></a>
+        <div id="heading_box">
+            Book Details
+        </div>
+        <div id="book_box">
+            <div id="image_box">
+                <img src="<%= book.image_url %>" />
+            </div>
+            <div id="content_box">
+                <h1 id="book_title"><%= book.title %></h1>
+                <h3 id="book_author">Author: <%= book.name %> , <%= book.publication_year %></h3>
+                <h3 id="book_price">Price: <%= book.price %></h3>
+                <p id="book_desc"> <%= book.description %> </p>
+                <p id="book_genres">
+                    <b>Genres:</b>
+                    <% genres.forEach(genre =>{ %>
+                        <%= genre.name %> ,
+                    <% }) %>
+                    <a href="/books/<%= book.id %>?click=true"><button id="add_genre_btn">Change Genres</button></a>
+                </p>
+                <a href="/books/<%= book.id %>?delete=true"><button id="delete_btn">Delete Book</button></a>
+            </div>
+        </div>
+    </div>
+    <% if (deleteClick){ %>
+        <div id="genre_container">
+            <div id="genre_box">
+                <h1 id="form_heading">Enter Admin Password</h1>
+                <form action="/books/delete/<%= book.id %>" method="POST">
+                        <input type="password" placeholder="Enter the password" name="password"/>
+                        <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    <% } %>
+    <% if (click){ %>
+        <div id="genre_container">
+            <div id="genre_box">
+                <h1 id="form_heading">Enter Genres Below</h1>
+                <form action="/books/<%= book.id %>" method="POST">
+                        <% all_genres.forEach(genre=>{ %>
+                            <label for="<%= genre.name %>">
+                                <% if (genres.some(g => g.name == genre.name)) {%>
+                                    <input name="<%= genre.name %>" type="checkbox" checked />
+                                <% } else{ %>
+                                    <input name="<%= genre.name %>" type="checkbox" />
+                                <% } %> 
+                                <%= genre.name %>
+                            </label>
+                        <% }) %>
+                        <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    <% } %>
+</body>
+</html>

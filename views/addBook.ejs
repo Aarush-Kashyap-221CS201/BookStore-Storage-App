@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/addBook.css" />
+    <link rel="icon" type="image/x-icon" href="/favicon.png" />
+    <title>Add Book</title>
+</head>
+<body>
+    <a href="/books"><img src="/back.png" id="go_back_icon"/></a>
+    <div id="heading_box">
+        Enter Book Details
+    </div>
+    <div id="form_box">
+        <form action="/books/add" method="POST" enctype="multipart/form-data">
+            <div class="input_box">
+                <label for="title">Title of Book</label>
+                <input name="title" type="text" required />
+            </div>
+            <div class="input_box">
+                <label for="authors">Author of Book</label>
+                <select name="author" id="author" required>
+                    <option value="" disabled selected>-- Select an Author --</option>
+                    <% authors.forEach(author => { %>
+                        <option value="<%= author.id %>"><%= author.id %>. <%= author.name %></option>
+                    <% }) %>
+                </select>   
+            </div>
+            <div class="input_box">
+                <label for="year">Year of Publication</label>
+                <input name="year" type="tel" required/>
+            </div>
+            <div class="input_box">
+                <label for="price">Price of book</label>
+                <input name="price" type="tel" required/>
+            </div>
+            <div class="input_box">
+                <label for="description">Description of Book</label>
+                <input name="description" type="text" required />
+            </div>
+            <div class="input_box">
+                <label for="image">Cover Image</label>
+                <input name="image" type="file" required />
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+        <%- include("errors.ejs",errors=errors) %>
+    </div>
+</body>
+</html>

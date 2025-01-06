@@ -1,0 +1,195 @@
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+
+#go_back_icon{
+    width:calc(2.5vw);
+    height:auto;
+    position: absolute;
+    top:3%;
+    left:2%;
+    transition: all 0.2s ease-in-out;
+    z-index: 1001;
+}
+
+#go_back_icon:hover{
+    cursor: pointer;
+    transform: scale(0.8);
+}
+
+#heading_box{
+    width:100%;
+    height:10vh;
+    box-shadow: 0 5px 5px rgb(0,0,0,0.5);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: calc(2.5vw);
+    font-weight: 1000;
+}
+
+#add_btn_box{
+    width:100%;
+    height:fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:calc(2vw);
+    gap:calc(5vw);
+}
+
+#add_btn_box button{
+    width:fit-content;
+    height: fit-content;
+    padding:calc(0.5vw) calc(1vw);
+    border-radius: calc(0.5vw);
+    font-size: calc(1.5vw);
+    font-weight: 1000;
+    font-family: cursive;
+    cursor: pointer;
+    background-color: lawngreen;
+    transition: all 0.2s ease-in-out;
+}
+
+#add_btn_box #filter_btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:calc(1vw);
+    background-color: lightblue;
+}
+
+a{
+    text-decoration: none;
+}
+
+#filter_btn img{
+    width:calc(2vw);
+    height:auto;
+}
+
+#add_btn_box button:hover{
+    transform: scale(0.9);
+}
+
+#filter_box{
+    width:100%;
+    height: fit-content;
+    padding: calc(2vw);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: calc(1.25vw);
+}
+
+#books_box{
+    padding:calc(2vw);
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    gap:calc(2vw);
+}
+
+.book{
+    padding: calc(1vw);
+    z-index: 1000;
+    box-shadow: 5px 5px 5px rgb(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap:calc(1vw);
+}
+
+.book img{
+    width:80%;
+    height: auto;
+}
+
+.book #book_heading{
+    font-size: calc(2vw);
+    font-weight: 1000;
+}
+
+.book p{
+    font-size: calc(1.25vw);
+}
+
+.book button{
+    background-color: lightblue;
+    padding:calc(0.5vw);
+    border-radius: calc(0.5vw);
+    cursor: pointer;
+    font-weight: 750;
+    transition: all 0.2s ease-in-out;
+    font-size: calc(1.5vw);
+}
+
+.book button:hover{
+    transform: scale(0.8);
+}
+
+#form_container{
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: 2000;
+    width:100vw;
+    height: 100vh;
+    background-color: rgb(255,255,255,0.7);
+}
+
+#form_box{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translateX(-50%) translateY(-50%);
+    background-color: white;
+    box-shadow: 0 0 5px rgb(0,0,0,0.5);
+    padding: calc(2vw);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#form_box form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap:calc(5vh);
+}
+
+.form_section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap:calc(2.5vh);
+}
+
+.form_section h3{
+    font-weight: 1000;
+    font-size: calc(1.25vw);
+}
+
+form button{
+    width:fit-content;
+    height: fit-content;
+    padding:calc(0.5vw) calc(1vw);
+    border-radius: calc(0.5vw);
+    font-size: calc(1.5vw);
+    font-weight: 1000;
+    font-family: cursive;
+    cursor: pointer;
+    background-color: lawngreen;
+    transition: all 0.2s ease-in-out;
+}
+
